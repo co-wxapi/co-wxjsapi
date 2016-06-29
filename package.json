@@ -1,7 +1,7 @@
 {
   "name": "co-wxjsapi",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.1.0",
+  "description": "wechat jsapi",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,14 +9,26 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "co-wxsign": "^0.1.0",
+    "co-wxsign": "^1.0.0",
     "co-wxbase": "^0.1.0"
   },
-  "engines": {
-    "node": ">= 4.4.0"
-  },
   "files": [
-    "lib",
     "*.js"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/co-wxapi/co-wxjsapi.git"
+  },
+  "keywords": [
+    "wechat",
+    "signature",
+    "wxjsapi"
+  ],
+  "engines": {
+    "node": ">= 4.2.0"
+  },
+  "bugs": {
+    "url": "https://github.com/co-wxapi/co-wxjsapi/issues"
+  },
+  "homepage": "https://github.com/co-wxapi/co-wxjsapi"
 }
