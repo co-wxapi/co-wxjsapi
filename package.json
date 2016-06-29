@@ -8,6 +8,10 @@
   },
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "co-wxsign": "^0.1.0",
+    "co-wxbase": "^0.1.0"
+  },
   "engines": {
     "node": ">= 4.4.0"
   },
