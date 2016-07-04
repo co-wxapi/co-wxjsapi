@@ -46,7 +46,7 @@ class WxJSAPI extends WxBase {
 
   *getTicket(accessToken){
     if ( !accessToken ) {
-      accessToken = yield this.tokenProvider.getAccessToken();
+      accessToken = yield this.provider.getAccessToken();
     }
     var url = `https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=${accessToken}&type=jsapi`;
     var result = yield this.jsonRequest(url, 'GET');
@@ -54,7 +54,7 @@ class WxJSAPI extends WxBase {
   }
 
   *sign(url, ticket) {
-    if ( !ticket ) ticket = yield this.tokenProvider.getJSAPITicket();
+    if ( !ticket ) ticket = yield this.provider.getJSAPITicket();
     var pos = url.indexOf('#');
     if ( pos >= 0 ) {
       url = url.substr(0, pos);
@@ -75,7 +75,8 @@ class WxJSAPI extends WxBase {
 
   *wxConfig(url,jsApiList,debug,ticket){
     if ( !ticket ) ticket = yield this.provider.getJSAPITicket();
-    var config = yield this.sign(ticket, url);
+    console.log('ticket', ticket);
+    var config = yield this.sign(url, ticket);
     config.debug = !!debug;
     config.jsApiList = jsApiList || this.allAPIs();
     return config;
